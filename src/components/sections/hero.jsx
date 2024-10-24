@@ -1,82 +1,129 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import Marquee from "react-fast-marquee";
-import { RiFacebookCircleFill, RiTwitterXLine, RiLinkedinFill, RiGithubLine, RiCircleFill, RiDownloadLine } from '@remixicon/react'
-import profile from "../../assets/images/about/profile.png"
-import partner1 from "../../assets/images/client-logos/partner1.png"
-import partner2 from "../../assets/images/client-logos/partner2.png"
-import partner3 from "../../assets/images/client-logos/partner3.png"
-import partner4 from "../../assets/images/client-logos/partner4.png"
-import partner5 from "../../assets/images/client-logos/partner5.png"
+import {
+    RiFacebookCircleFill,
+    RiTwitterXLine,
+    RiLinkedinFill,
+    RiGithubLine,
+    RiCircleFill,
+    RiDownloadLine,
+    RiWhatsappLine
+} from '@remixicon/react';
+import profile from "../../assets/images/about/profile.png";
+import partner1 from "../../assets/images/client-logos/partner1.png";
+import partner2 from "../../assets/images/client-logos/partner2.png";
+import partner3 from "../../assets/images/client-logos/partner3.png";
+import partner4 from "../../assets/images/client-logos/partner4.png";
+import partner5 from "../../assets/images/client-logos/partner5.png";
 import SlideUp from '../../utlits/animations/slideUp';
 
 const Hero = () => {
+    const [experience, setExperience] = useState('');
+
+    useEffect(() => {
+        const calculateExperience = () => {
+            const startDate = new Date('2022-11-01'); 
+            const currentDate = new Date();
+            
+            let years = currentDate.getFullYear() - startDate.getFullYear();
+            if (currentDate.getMonth() < startDate.getMonth() || 
+                (currentDate.getMonth() === startDate.getMonth() && 
+                 currentDate.getDate() < startDate.getDate())) {
+                years--;
+            }
+            
+            let months = (currentDate.getMonth() - startDate.getMonth() + 12) % 12;
+            
+            let experienceText = '';
+            if (years > 0) {
+                experienceText += `${years} year${years !== 1 ? 's' : ''}`;
+                if (months > 0) {
+                    experienceText += ` ${months} month${months !== 1 ? 's' : ''}`;
+                }
+            } else {
+                experienceText = `${months} month${months !== 1 ? 's' : ''}`;
+            }
+            
+            setExperience(experienceText);
+        };
+
+        calculateExperience();
+        
+        const intervalId = setInterval(calculateExperience, 30 * 24 * 60 * 60 * 1000);
+        
+        return () => clearInterval(intervalId);
+    }, []);
+
+   
     return (
         <section id="about" className="about-area">
             <div className="container">
                 <div className="row">
-                    {/* <!-- START ABOUT IMAGE DESIGN AREA --> */}
+                    {/* START ABOUT IMAGE DESIGN AREA */}
                     <div className="col-lg-4">
                         <SlideUp>
                             <div className="about-image-part">
-                                <img src={profile} alt="About Me" />
-                                <h3 className="mt-4">Mohammed Hareesh</h3>
+                                <img src={profile} alt="About Me"/>
+                                <h2 className="mt-4">Mohammed Hareesh</h2>
                                 <p>I am a Web Designer based in Chennai.</p>
                                 <div className="about-social text-center">
                                     <ul>
-                                        <li><Link  target="_blank" to="https://www.facebook.com/mohammed.hareesh.5"><RiFacebookCircleFill size={20} /></Link></li>
-                                        {/* <li><Link to=""><RiTwitterXLine size={20} /></Link></li> */}
-                                        <li><Link target="_blank"  to="https://www.linkedin.com/in/mohammed-hareesh-900a91222/"><RiLinkedinFill size={20} /></Link></li>
-                                        <li><Link  to=""><RiGithubLine size={20} /></Link></li>
+                                        <li>
+                                            <Link target="_blank" to="https://www.facebook.com/mohammed.hareesh.5">
+                                                <RiFacebookCircleFill size={20}/>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                target="_blank"
+                                                to="https://www.linkedin.com/in/mohammed-hareesh-900a91222/">
+                                                <RiLinkedinFill size={20}/>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link target="_blank"
+                                             to="https://github.com/Mohammedhareesh">
+                                                <RiGithubLine size={20}/>
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </SlideUp>
                     </div>
-                    {/* <!-- / END ABOUT IMAGE DESIGN AREA -->
-                    <!-- START ABOUT TEXT DESIGN AREA --> */}
+                    {/* / END ABOUT IMAGE DESIGN AREA */}
+                    {/* START ABOUT TEXT DESIGN AREA */}
                     <div className="col-lg-8">
                         <SlideUp>
                             <div className="about-content-part">
-                                <p>Hello There!</p>
+                                <p>Greetings!</p>
                                 <h2>
-                                    I’m Bentos Walker, a product designer crafting user-centric design with pixel-perfect precision.
+                                    Front-end Developer with {experience} of expertise in delivering responsive web
+                                    solutions across 5+ live projects and freelance engagements. Demonstrates proven
+                                    ability to transform client requirements into engaging user interfaces while
+                                    ensuring optimal performance and functionality.
                                 </h2>
                                 <div className="adress-field">
                                     <ul>
-                                        <li className='d-flex align-items-center'><i><RiCircleFill size={14} /></i> Available for Freelancing</li>
+                                        <li className='d-flex align-items-center'>
+                                            <i>
+                                                <RiCircleFill size={14}/></i>Ready to Connect
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className="hero-btns">
-                                    <Link to="/contact" className="theme-btn">Download CV <i><RiDownloadLine size={16} /></i> </Link>
-                                </div>
-                            </div>
-                        </SlideUp>
-                        <SlideUp>
-                            <div className="about-content-part-bottom">
-                                <h2>Company I Worked With</h2>
-                                <div className="company-list">
-                                    <div className="scroller">
-                                        <div className="scroller__inner">
-                                            <Marquee>
-                                                <img src={partner1} alt="" />
-                                                <img src={partner2} alt="" />
-                                                <img src={partner3} alt="" />
-                                                <img src={partner4} alt="" />
-                                                <img src={partner5} alt="" />
-                                                <img src={partner1} alt="" />
-                                            </Marquee>
-                                        </div>
-                                    </div>
+                                    <Link target='_blank' to="https://wa.me/919092334732" className="theme-btn">
+                                        Whatsapp Me <RiWhatsappLine size={15}/>
+                                    </Link>
                                 </div>
                             </div>
                         </SlideUp>
                     </div>
-                    {/* <!-- / END ABOUT TEXT DESIGN AREA --> */}
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
-export default Hero
+export default Hero;

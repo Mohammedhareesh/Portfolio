@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import RootLayout from "../layout/root";
 import Home from "../pages/home";
 import Contact from "../pages/contact";
@@ -7,36 +7,30 @@ import Service from "../pages/service";
 import SingleProject from "../pages/single-project";
 import Works from "../pages/works";
 
-
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <RootLayout />,
+        element: <RootLayout/>,
         children: [
             {
                 path: "/",
-                element: <Home />
-            },
-            {
+                element: <Home/>
+            }, {
                 path: "/contact",
-                element: <Contact />
-            },
-            {
+                element: <Contact/>
+            }, {
                 path: "/about",
-                element: <About />
-            },
-            {
+                element: <About/>
+            }, {
                 path: "/service",
-                element: <Service />
-            },
-            {
+                element: <Service/>
+            }, {
                 path: "/single-project",
-                element: <SingleProject />
-            },
-            {
+                element: <SingleProject/>
+            }, {
                 path: "/works",
-                element: <Works />
-            },
+                element: <Works/>
+            }
         ]
     }
 ])
