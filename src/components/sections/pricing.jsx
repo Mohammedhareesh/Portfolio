@@ -1,5 +1,5 @@
 import React from 'react'
-import { priceData } from '../../utlits/fackData/priceData'
+import { priceData } from '../../utlits/Datas/priceData'
 import { Link } from 'react-router-dom'
 import { RiArrowRightLine, RiShoppingBasketLine } from '@remixicon/react'
 import SlideUp from '../../utlits/animations/slideUp'

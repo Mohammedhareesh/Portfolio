@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {Link, useLocation} from 'react-router-dom'
 import {RiWhatsappLine} from '@remixicon/react'
 import logo from '../../assets/images/logo/logo_fav.png'
-import {menuList} from '../../utlits/fackData/menuList'
+import {menuList} from '../../utlits/Datas/menuList'
 
 const Header = () => {
     const {pathname} = useLocation(); // Get the current path

@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 
 
 import { RiArrowLeftSLine, RiArrowRightSLine } from '@remixicon/react';
-import { testimonialsData } from '../../utlits/fackData/testimonialsData';
+import { testimonialsData } from '../../utlits/Datas/testimonialsData';
 import SlideUp from '../../utlits/animations/slideUp';
 
 

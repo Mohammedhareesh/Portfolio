@@ -23,7 +23,7 @@ const Hero = () => {
 
     useEffect(() => {
         const calculateExperience = () => {
-            const startDate = new Date('2022-11-01'); 
+            const startDate = new Date('2022-11-02'); 
             const currentDate = new Date();
             
             let years = currentDate.getFullYear() - startDate.getFullYear();

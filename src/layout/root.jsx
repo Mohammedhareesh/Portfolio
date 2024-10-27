@@ -11,7 +11,7 @@ const RootLayout = () => {
             <Preloader />
             <Header />
             <Outlet />
-            <CallToAction />
+            {/* <CallToAction /> */}
             <Footer />
         </>
     )
