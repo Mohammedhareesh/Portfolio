@@ -13,9 +13,9 @@ const Resume = () => {
                             <div className="single-resume">
                                 <h2>Experience</h2>
                                 <div className="experience-list">
-                                    <Card year={'2021 - Present'} title={'Web Designer'} institution={'Themeforest Market '} />
-                                    <Card year={'2021 - 2023'} title={'Marketing Expert GRP'} institution={'Envato Theme Developer'} />
-                                    <Card year={'2021 - 2022'} title={'Web Designer'} institution={'Web Developer & Business Partner'} />
+                                    <Card year={'Nov 2022 - Present'} title={'Front-end Developer'} institution={'Thaagam Foundation'} />
+                                    {/* <Card year={'2021 - 2023'} title={'Marketing Expert GRP'} institution={'Envato Theme Developer'} />
+                                    <Card year={'2021 - 2022'} title={'Web Designer'} institution={'Web Developer & Business Partner'} /> */}
                                 </div>
                             </div>
                         </div>
@@ -25,9 +25,9 @@ const Resume = () => {
                             <div className="experience-list">
                                 <div className="single-resume">
                                     <h2>Education</h2>
-                                    <Card year={'2013 - 2015'} title={'Bachelor Degree of Information Technology'} institution={'State University bangladesh'} />
-                                    <Card year={'2021 - 2024'} title={'Higher secoundery Education'} institution={'Premium College United VC'} />
-                                    <Card year={'2020 - 2021'} title={'UI/UX Design'} institution={'Webster College'} />
+                                    <Card year={'2016 - 2019'} title={'Bachelor Degree of Computer Application'} institution={'University of Madras'} />
+                                    {/* <Card year={'2021 - 2024'} title={'Higher secoundery Education'} institution={'Premium College United VC'} />
+                                    <Card year={'2020 - 2021'} title={'UI/UX Design'} institution={'Webster College'} /> */}
                                 </div>
                             </div>
                         </div>

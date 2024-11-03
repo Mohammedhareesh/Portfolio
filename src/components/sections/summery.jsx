@@ -1,6 +1,7 @@
 import React from 'react'
-import profile from "../../assets/images/about/profile.png"
-import { RiMailSendLine } from '@remixicon/react'
+import {Link} from 'react-router-dom';
+import about_profile from "../../assets/images/about/about_profile.png"
+import {RiWhatsappLine} from '@remixicon/react'
 import SlideUp from '../../utlits/animations/slideUp'
 const Summery = () => {
     return (
@@ -11,7 +12,7 @@ const Summery = () => {
                     <div className="col-lg-4">
                         <SlideUp>
                             <div className="about-image-part">
-                                <img src={profile} alt="About Me" />
+                                <img src={about_profile} alt="About Me"/>
                             </div>
                         </SlideUp>
                     </div>
@@ -21,12 +22,23 @@ const Summery = () => {
                         <SlideUp>
                             <div className="about-content-part">
                                 <h2>
-                                    I’m Bentos Walker, a product designer.
+                                    I’m Mohammed Hareesh, A Front-end Developer.
                                 </h2>
-                                <p>I am a San francisco-based product designer with a focus on web design, illustration, a visual development. I have a diverse range of experience having worked across various fields and industries.</p>
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+                                <p>A skilled front-end developer based in Chennai, known for creating engaging
+                                    and efficient user interfaces. Proficient in HTML, CSS, and JavaScript, he
+                                    excels at building responsive and visually appealing web applications that
+                                    enhance user experience. Mohammed combines technical expertise with a strong eye
+                                    for design, ensuring each project aligns with both aesthetic and functional
+                                    requirements. Known for his problem-solving abilities and commitment to staying
+                                    updated with industry trends, he consistently delivers high-quality, scalable
+                                    front-end solutions tailored to meet client and business needs.
+
+                                </p>
+                                {/* <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p> */}
                                 <div className="hero-btns">
-                                    <a href="contact.html" className="theme-btn">Get In touch<i> <RiMailSendLine size={16} /> </i></a>
+                                    <Link target='_blank' to="https://wa.me/919092334732" className="theme-btn">
+                                        Whatsapp Me <RiWhatsappLine size={15}/>
+                                    </Link>
                                 </div>
                             </div>
                         </SlideUp>

@@ -4,7 +4,7 @@ import SlideUp from '../../../utlits/animations/slideUp'
 
 const ContactOption = () => {
     return (
-        <div className="col-lg-4">
+        <div className="col-lg-6 justify-content-center">
             <SlideUp>
                 <div className="contact-content-part">
                     <SlideUp delay={2}>
@@ -12,8 +12,8 @@ const ContactOption = () => {
                             <div className="contact-icon">
                                 <i> <RiMapPinLine size={20} /></i>
                             </div>
-                            <h2>our office:</h2>
-                            <p>Jurain,Dhaka Bangladesh</p>
+                            <h2>Location :</h2>
+                            <p>Chennai, Tamil Nadu, India</p>
                         </div>
                     </SlideUp>
                     <SlideUp delay={3}>
@@ -22,7 +22,7 @@ const ContactOption = () => {
                                 <i> <RiPhoneLine size={20} /></i>
                             </div>
                             <h2>contact number:</h2>
-                            <p>+1234321321</p>
+                            <p>+91 909 233 4732</p>
                         </div>
                     </SlideUp>
                     <SlideUp delay={4}>
@@ -31,7 +31,7 @@ const ContactOption = () => {
                                 <i> <RiMailLine size={20} /></i>
                             </div>
                             <h2>Email us:</h2>
-                            <p>websitename@mail.com</p>
+                            <p>mohammedhareesh68@gmail.com</p>
                         </div>
                     </SlideUp>
                 </div>

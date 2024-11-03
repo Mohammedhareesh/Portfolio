@@ -1,17 +1,77 @@
-import work_1 from "../../assets/images/projects/work1.jpg"
-import work_2 from "../../assets/images/projects/work2.jpg"
-import work_3 from "../../assets/images/projects/work3.jpg"
-import work_4 from "../../assets/images/projects/work4.jpg"
+// import work_1 from "../../assets/images/projects/work1.jpg"
+// import work_2 from "../../assets/images/projects/work2.jpg"
+// import work_3 from "../../assets/images/projects/work3.jpg"
+// import work_4 from "../../assets/images/projects/work4.jpg"
+import thaagam from '../../assets/images/projects/thaagam.png'
+import loco_mini from '../../assets/images/projects/loco_minister.png'
+import bocea from '../../assets/images/projects/bocea.png'
+import cleaning from '../../assets/images/projects/cleaning.png'
+import dsc from '../../assets/images/projects/dsc.png'
+import custom_song from '../../assets/images/projects/custom_song.png'
+import jj from '../../assets/images/projects/jj.png'
+import karunai from '../../assets/images/projects/karunai.png'
+import Shilpa from '../../assets/images/projects/Shilpa.png'
+import lotels from '../../assets/images/projects/lotels.png'
+import m7_s from '../../assets/images/projects/m7_s.png'
 
-export const projectsData = [
-    {
+
+
+
+
+
+export const projectsData = [{
         id: 1,
-        src: work_1,
+        src: thaagam,
         category: "Offical",
         title: "Thaagam.org",
-        urls:"https://thaagam.org/"
+        urls: "https://thaagam.org/"
     },
-    // {
+
+    {
+        id: 2,
+        src: custom_song,
+        category: "Offical",
+        title: "A Custom Song",
+        urls: "https://acustomsong.com/"
+    },
+    {
+        id: 6,
+        src: lotels,
+        category: "Offical",
+        title: "LOTELS RESIDENCY",
+        urls: "https://www.lotels.in/"
+    },
+    {
+        id: 7,
+        src: m7_s,
+        category: "Offical",
+        title: "M7 Studios",
+        urls: "https://m7-studios.com/"
+    },
+
+    {
+        id: 3,
+        src: jj,
+        category: "Offical",
+        title: "JJ Borewells",
+        urls: "https://jjborewell.com/"
+    },
+
+    {
+        id: 4,
+        src: Shilpa,
+        category: "Offical",
+        title: "Shilpa Garden",
+        urls: "https://drshubacharleswellnesscenter.com/"
+    },
+
+    {
+        id: 5,
+        src: karunai,
+        category: "Offical",
+        title: "Karunai Karangal",
+        urls: "https://karunaikarangalindia.org/"
+    }, // {
     //     id:2,
     //     src:work_2,
     //     category:"Freelance",
@@ -19,80 +79,50 @@ export const projectsData = [
     //     urls:"https://microbotware.com/"
     // },
     {
-        id:3,
-        src:work_2,
-        category:"Freelance",
-        title:"Loco Ministries",
-        urls:"https://locoafrica.org/"
+        id: 6,
+        src: loco_mini,
+        category: "Freelance",
+        title: "Loco Ministries",
+        urls: "https://locoafrica.org/"
     },
     {
-        id:4,
-        src:work_2,
-        category:"Freelance",
-        title:"BOCEA",
-        urls:"https:/boceastafrica.org/"
+        id: 7,
+        src: bocea,
+        category: "Freelance",
+        title: "BOCEA",
+        urls: "https:/boceastafrica.org/"
     },
-    {
-        id:5,
-        src:work_2,
-        category:"Freelance",
-        title:"Cleaning Service",
-        urls:"https://cleaningserviceqwt.com/"
-    },
-    {
-        id:6,
-        src:work_2,
-        category:"Freelance",
-        title:"DSC Society",
-        urls:"https://www.dshelp.org/"
-    },
-    {
-        id:7,
-        src:work_2,
-        category:"Freelance",
-        title:"Cleaning Service",
-        urls:"https://cleaningserviceqwt.com/"
-    },
-
     {
         id: 8,
-        src: work_1,
-        category: "Offical",
-        title: "A Custom Song",
-        urls:"https://acustomsong.com/"
+        src: cleaning,
+        category: "Freelance",
+        title: "Cleaning Service",
+        urls: "https://cleaningserviceqwt.com/"
     },
-
     {
         id: 9,
-        src: work_1,
-        category: "Offical",
-        title: "JJ Borewells",
-        urls:"https://jjborewell.com/"
+        src: dsc,
+        category: "Freelance",
+        title: "DSC Society",
+        urls: "https://www.dshelp.org/"
     },
+    // {
+    //     id:10,
+    //     src:cleaning,
+    //     category:"Freelance",
+    //     title:"Cleaning Service",
+    //     urls:"https://cleaningserviceqwt.com/"
+    // },
 
-    {
-        id: 10,
-        src: work_1,
-        category: "Offical",
-        title: "Shilpa Garden",
-        urls:"https://drshubacharleswellnesscenter/"
-    },
 
-    {
-        id: 10,
-        src: work_1,
-        category: "Offical",
-        title: "Karunai Karangal",
-        urls:"https://karunaikarangalindia.org/"
-    },
 
-    {
-        id: 11,
-        src: work_1,
-        category: "Offical",
-        title: "Global Life Tree Foundation",
-        urls:"https://globallifetreefoundation.world/"
-    },
+    // {
+    //     id: 11,
+    //     src: work_1,
+    //     category: "Offical",
+    //     title: "Global Life Tree Foundation",
+    //     urls:"https://globallifetreefoundation.world/"
+    // },
 
 
 ]

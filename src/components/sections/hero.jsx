@@ -100,7 +100,7 @@ const Hero = () => {
                                 <p>Greetings!</p>
                                 <h2>
                                     Front-end Developer with {experience} of expertise in delivering responsive web
-                                    solutions across 5+ live projects and freelance engagements. Demonstrates proven
+                                    solutions across 7+ live projects and freelance engagements. Demonstrates proven
                                     ability to transform client requirements into engaging user interfaces while
                                     ensuring optimal performance and functionality.
                                 </h2>
