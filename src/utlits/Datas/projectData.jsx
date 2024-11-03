@@ -24,7 +24,7 @@ export const projectsData = [{
         src: thaagam,
         category: "Offical",
         title: "Thaagam.org",
-        urls: "https://thaagam.org/"
+        urls: "https://thaagam.foundation/"
     },
 
     {
@@ -35,14 +35,14 @@ export const projectsData = [{
         urls: "https://acustomsong.com/"
     },
     {
-        id: 6,
+        id: 3,
         src: lotels,
         category: "Offical",
         title: "LOTELS RESIDENCY",
         urls: "https://www.lotels.in/"
     },
     {
-        id: 7,
+        id: 4,
         src: m7_s,
         category: "Offical",
         title: "M7 Studios",
@@ -50,7 +50,7 @@ export const projectsData = [{
     },
 
     {
-        id: 3,
+        id: 5,
         src: jj,
         category: "Offical",
         title: "JJ Borewells",
@@ -58,7 +58,7 @@ export const projectsData = [{
     },
 
     {
-        id: 4,
+        id: 6,
         src: Shilpa,
         category: "Offical",
         title: "Shilpa Garden",
@@ -66,7 +66,7 @@ export const projectsData = [{
     },
 
     {
-        id: 5,
+        id: 7,
         src: karunai,
         category: "Offical",
         title: "Karunai Karangal",
@@ -79,28 +79,28 @@ export const projectsData = [{
     //     urls:"https://microbotware.com/"
     // },
     {
-        id: 6,
+        id: 8,
         src: loco_mini,
         category: "Freelance",
         title: "Loco Ministries",
         urls: "https://locoafrica.org/"
     },
     {
-        id: 7,
+        id: 9,
         src: bocea,
         category: "Freelance",
         title: "BOCEA",
         urls: "https:/boceastafrica.org/"
     },
     {
-        id: 8,
+        id: 10,
         src: cleaning,
         category: "Freelance",
         title: "Cleaning Service",
         urls: "https://cleaningserviceqwt.com/"
     },
     {
-        id: 9,
+        id: 11,
         src: dsc,
         category: "Freelance",
         title: "DSC Society",

@@ -20,6 +20,7 @@ import SlideUp from '../../utlits/animations/slideUp';
 
 const Hero = () => {
     const [experience, setExperience] = useState('');
+    const [greeting, setGreeting] = useState('');
 
     useEffect(() => {
         const calculateExperience = () => {
@@ -48,7 +49,19 @@ const Hero = () => {
             setExperience(experienceText);
         };
 
+        const calculateGreeting = () => {
+            const currentHour = new Date().getHours();
+            if (currentHour < 12) {
+                setGreeting('Good Morning');
+            } else if (currentHour < 18) {
+                setGreeting('Good Afternoon');
+            } else {
+                setGreeting('Good Evening');
+            }
+        };
+
         calculateExperience();
+        calculateGreeting();
         
         const intervalId = setInterval(calculateExperience, 30 * 24 * 60 * 60 * 1000);
         
@@ -97,7 +110,7 @@ const Hero = () => {
                     <div className="col-lg-8">
                         <SlideUp>
                             <div className="about-content-part">
-                                <p>Greetings!</p>
+                            <p>Greetings!, {greeting}.</p>
                                 <h2>
                                     Front-end Developer with {experience} of expertise in delivering responsive web
                                     solutions across 7+ live projects and freelance engagements. Demonstrates proven
