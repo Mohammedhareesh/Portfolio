@@ -62,7 +62,7 @@ const styles = {
         fontSize: '24px',
         fontWeight: 'bold',
         padding: '20px',
-        backgroundColor: '#333',
+        // backgroundColor: '#333',
         borderRadius: '8px',
         textAlign: 'center',
     },
