@@ -6,26 +6,22 @@ const App = () => {
     const [showWarning, setShowWarning] = useState(false);
 
     useEffect(() => {
-        // Disable right-click context menu
         const handleContextMenu = (e) => e.preventDefault();
         document.addEventListener('contextmenu', handleContextMenu);
 
-        // Disable specific keys for inspect element
         const handleKeyDown = (e) => {
-            // F12 or Ctrl+Shift+I/Ctrl+Shift+J/Ctrl+Shift+C
             if (
                 e.keyCode === 123 ||
                 (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
-                (e.ctrlKey && e.keyCode === 85) // Ctrl+U to view source
+                (e.ctrlKey && e.keyCode === 85) 
             ) {
                 e.preventDefault();
-                setShowWarning(true); // Show warning message
-                setTimeout(() => setShowWarning(false), 2000); // Hide after 2 seconds
+                setShowWarning(true); 
+                setTimeout(() => setShowWarning(false), 2000); 
             }
         };
         document.addEventListener('keydown', handleKeyDown);
 
-        // Clean up event listeners on unmount
         return () => {
             document.removeEventListener('contextmenu', handleContextMenu);
             document.removeEventListener('keydown', handleKeyDown);
