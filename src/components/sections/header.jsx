@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {Link, useLocation} from 'react-router-dom'
-import {RiWhatsappLine} from '@remixicon/react'
+import {RiWhatsappLine, RiDownloadLine} from '@remixicon/react'
 import logo from '../../assets/images/logo/logo_fav.png'
+import cv from '../../assets/cv/Mohammed_Hareesh.pdf';
 import {menuList} from '../../utlits/Datas/menuList'
 
 const Header = () => {
@@ -82,9 +83,15 @@ const Header = () => {
                                 </div>
                             </nav>
                         </div>
+                        <div className="menu-btns mx-1">
+                            <a href={cv} download="Mohammed_Hareesh_CV.pdf" className="theme-btn">
+                                Download CV <RiDownloadLine size={15}/>
+                            </a>
+                        </div>
                         <div className="menu-btns">
                             <Link target='_blank' to="https://wa.me/919092334732" className="theme-btn">
-                                Whatsapp Me <RiWhatsappLine size={15}/>
+                                Whatsapp Me
+                                <RiWhatsappLine size={15}/>
                             </Link>
                         </div>
                     </div>
