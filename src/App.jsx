@@ -32,7 +32,7 @@ const App = () => {
         <div style={{ position: 'relative' }}>
             {showWarning && (
                 <div style={styles.warningOverlay}>
-                    <div style={styles.warningMessage}>Inspect not allowed</div>
+                    <div style={styles.warningMessage}>Sorry !, Context Menu is Not Allowed</div>
                 </div>
             )}
             <RouterProvider router={router} />

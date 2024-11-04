@@ -27,6 +27,9 @@ Version      : 1.0
 .call-to-action-part {
     padding: 60px 60px;
 }
+.cv-dwn-btn{
+    display: none;
+}
 }
 
 
@@ -337,6 +340,9 @@ Version      : 1.0
         padding-left: 70px;
         padding-right: 70px;
     }
+    .cv-dwn-btn{
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
@@ -356,6 +362,9 @@ Version      : 1.0
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
+    }
+    .cv-dwn-btn{
+        display: none;
     }
 }
 
