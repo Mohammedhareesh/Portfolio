@@ -121,8 +121,7 @@ const Hero = () => {
                             <div className="about-content-part">
                                 <p>Greetings!, {greeting}.</p>
                                 <h2>
-                                    Front-end Developer with {experience}
-                                    of expertise in delivering responsive web solutions across 7+ live projects and
+                                    Front-end Developer with {experience} of expertise in delivering responsive web solutions across 7+ live projects and
                                     freelance engagements. Demonstrates proven ability to transform client
                                     requirements into engaging user interfaces while ensuring optimal performance
                                     and functionality.
