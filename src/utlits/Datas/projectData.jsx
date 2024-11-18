@@ -24,7 +24,7 @@ export const projectsData = [{
         src: thaagam,
         category: "Offical",
         title: "Thaagam.org",
-        urls: "https://thaagam.foundation/"
+        urls: "https://thaagam.org/"
     },
 
     {
