@@ -3020,3 +3020,12 @@ ul.blog_pagination li a:hover {
     padding: 25px;
     border: 1px solid var(--border-color);
 }
+
+.skill_img{
+    width: 100px;
+}
+
+img {
+    -webkit-user-drag: none; /* For Safari and Chrome */
+    user-drag: none; /* Standard property */
+}

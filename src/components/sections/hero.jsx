@@ -12,6 +12,19 @@ import {
 } from '@remixicon/react';
 import profile from "../../assets/images/about/profile.png";
 import cv from '../../assets/cv/Mohammed_Hareesh.pdf';
+import illustrator from "../../assets/images/skills/adobe-illustrator.png";
+import bs5 from "../../assets/images/skills/bootstrap-framework.png";
+import css from "../../assets/images/skills/css3.png";
+import git from "../../assets/images/skills/git.png";
+import github from "../../assets/images/skills/github.png";
+import html from "../../assets/images/skills/html.png";
+import javascript from "../../assets/images/skills/javascript.png";
+import jquery from "../../assets/images/skills/jquery.png";
+import react from "../../assets/images/skills/react.png";
+import photoshop from "../../assets/images/skills/photoshop.png";
+import php from "../../assets/images/skills/php.png";
+import tailwind from "../../assets/images/skills/tailwind.png";
+import vscode from "../../assets/images/skills/visual-studio-code.png";
 
 import SlideUp from '../../utlits/animations/slideUp';
 
@@ -139,6 +152,36 @@ const Hero = () => {
                                         Whatsapp Me
                                         <RiWhatsappLine size={15}/>
                                     </Link>
+                                </div>
+                            </div>
+                        </SlideUp>
+                       
+                    </div>
+                    <div className="col-lg-12">
+                    <SlideUp>
+                            <div className="about-content-part-bottom">
+                                <h2>Skills</h2>
+                                <div className="company-list">
+                                    <div className="scroller">
+                                        <div className="scroller__inner">
+                                            <Marquee>
+                                                <img className="skill_img" src={html} alt="" />
+                                                <img className="skill_img" src={css} alt="" />
+                                                <img className="skill_img" src={bs5} alt="" />
+                                                <img className="skill_img" src={tailwind} alt="" />
+                                                <img className="skill_img" src={javascript} alt="" />
+                                                <img className="skill_img" src={jquery} alt="" />
+                                                <img className="skill_img" src={react} alt="" />
+                                                <img className="skill_img" src={git} alt="" />
+                                                <img className="skill_img" src={github} alt="" />
+                                                <img className="skill_img" src={php} alt="" />
+                                                <img className="skill_img" src={photoshop} alt="" />
+                                                <img className="skill_img" src={illustrator} alt="" />
+                                                <img className="skill_img" src={vscode} alt="" />
+                                               
+                                            </Marquee>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </SlideUp>

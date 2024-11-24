@@ -6,20 +6,27 @@ const App = () => {
     const [showWarning, setShowWarning] = useState(false);
 
     useEffect(() => {
-        const handleContextMenu = (e) => e.preventDefault();
-        document.addEventListener('contextmenu', handleContextMenu);
+
+        
+        const handleContextMenu = (e) => {
+            e.preventDefault();
+            setShowWarning(true);
+            setTimeout(() => setShowWarning(false), 2000); // Display message for 2 seconds
+        };
 
         const handleKeyDown = (e) => {
             if (
-                e.keyCode === 123 ||
-                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
-                (e.ctrlKey && e.keyCode === 85) 
+                e.keyCode === 123 || // F12
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I/J/C
+                (e.ctrlKey && e.keyCode === 85) // Ctrl+U
             ) {
                 e.preventDefault();
-                setShowWarning(true); 
-                setTimeout(() => setShowWarning(false), 2000); 
+                setShowWarning(true);
+                setTimeout(() => setShowWarning(false), 2000); // Display message for 2 seconds
             }
         };
+
+        document.addEventListener('contextmenu', handleContextMenu);
         document.addEventListener('keydown', handleKeyDown);
 
         return () => {
@@ -32,7 +39,7 @@ const App = () => {
         <div style={{ position: 'relative' }}>
             {showWarning && (
                 <div style={styles.warningOverlay}>
-                    <div style={styles.warningMessage}>Sorry !, Context Menu is Not Allowed</div>
+                    <div style={styles.warningMessage}>Sorry! Context Menu is Not Allowed</div>
                 </div>
             )}
             <RouterProvider router={router} />
@@ -58,7 +65,6 @@ const styles = {
         fontSize: '24px',
         fontWeight: 'bold',
         padding: '20px',
-        // backgroundColor: '#333',
         borderRadius: '8px',
         textAlign: 'center',
     },
