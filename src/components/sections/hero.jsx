@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Marquee from "react-fast-marquee";
 import {
     RiFacebookCircleFill,
@@ -29,10 +29,9 @@ import vscode from "../../assets/images/skills/visual-studio-code.png";
 import SlideUp from '../../utlits/animations/slideUp';
 
 const Hero = () => {
-    const [experience,
-        setExperience] = useState('');
-    const [greeting,
-        setGreeting] = useState('');
+    const [experience, setExperience] = useState('');
+    const [greeting, setGreeting] = useState('');
+    const [age, setAge] = useState(0);  // New state for age
 
     useEffect(() => {
         const calculateExperience = () => {
@@ -48,18 +47,12 @@ const Hero = () => {
 
             let experienceText = '';
             if (years > 0) {
-                experienceText += `${years} year${years !== 1
-                    ? 's'
-                    : ''}`;
+                experienceText += `${years} year${years !== 1 ? 's' : ''}`;
                 if (months > 0) {
-                    experienceText += ` ${months} month${months !== 1
-                        ? 's'
-                        : ''}`;
+                    experienceText += ` ${months} month${months !== 1 ? 's' : ''}`;
                 }
             } else {
-                experienceText = `${months} month${months !== 1
-                    ? 's'
-                    : ''}`;
+                experienceText = `${months} month${months !== 1 ? 's' : ''}`;
             }
 
             setExperience(experienceText);
@@ -76,8 +69,23 @@ const Hero = () => {
             }
         };
 
+        const calculateAge = () => {
+            const birthDate = new Date('1998-12-16'); // Your birthdate
+            const currentDate = new Date();
+            let age = currentDate.getFullYear() - birthDate.getFullYear();
+            const monthDifference = currentDate.getMonth() - birthDate.getMonth();
+
+            // Check if the birthday has already occurred this year
+            if (monthDifference < 0 || (monthDifference === 0 && currentDate.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            setAge(age);
+        };
+
         calculateExperience();
         calculateGreeting();
+        calculateAge();
 
         const intervalId = setInterval(calculateExperience, 30 * 24 * 60 * 60 * 1000);
 
@@ -93,7 +101,7 @@ const Hero = () => {
                         <SlideUp>
                             <div className="about-image-part">
                                 <img src={profile} alt="About Me"/>
-                                <h2 className="mt-4">Mohammed Hareesh</h2>
+                                <h2 className="mt-4">Mohammed Hareesh / {age}</h2>
                                 <p>I am a Web Designer based in Chennai.</p>
                                 <div className="about-social text-center">
                                     <ul>
@@ -117,14 +125,11 @@ const Hero = () => {
                                     </ul>
                                 </div>
                                 <div className='cv-dwn-btn mt-20'>
-                                <a href={cv} download="Mohammed_Hareesh_CV.pdf" className="theme-btn ">
-                                        Download CV
-                                        <RiDownloadLine size={15}/>
+                                    <a href={cv} download="Mohammed_Hareesh_CV.pdf" className="theme-btn ">
+                                        Download CV <RiDownloadLine size={15}/>
                                     </a>
                                 </div>
-                                
                             </div>
-                            
                         </SlideUp>
                     </div>
                     {/* / END ABOUT IMAGE DESIGN AREA */}
@@ -132,7 +137,7 @@ const Hero = () => {
                     <div className="col-lg-8">
                         <SlideUp>
                             <div className="about-content-part">
-                                <p>Greetings!, {greeting}.</p>
+                                <p>Greetings..!, {greeting}</p>
                                 <h2>
                                     Front-end Developer with {experience} of expertise in delivering responsive web solutions across 7+ live projects and
                                     freelance engagements. Demonstrates proven ability to transform client
@@ -149,16 +154,14 @@ const Hero = () => {
                                 </div>
                                 <div className="hero-btns">
                                     <Link target='_blank' to="https://wa.me/919092334732" className="theme-btn">
-                                        Whatsapp Me
-                                        <RiWhatsappLine size={15}/>
+                                        Whatsapp Me <RiWhatsappLine size={15}/>
                                     </Link>
                                 </div>
                             </div>
                         </SlideUp>
-                       
                     </div>
                     <div className="col-lg-12">
-                    <SlideUp>
+                        <SlideUp>
                             <div className="about-content-part-bottom">
                                 <h2>Skills</h2>
                                 <div className="company-list">
@@ -178,7 +181,6 @@ const Hero = () => {
                                                 <img className="skill_img" src={photoshop} alt="" />
                                                 <img className="skill_img" src={illustrator} alt="" />
                                                 <img className="skill_img" src={vscode} alt="" />
-                                               
                                             </Marquee>
                                         </div>
                                     </div>

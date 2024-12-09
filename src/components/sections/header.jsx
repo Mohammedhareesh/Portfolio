@@ -90,8 +90,7 @@ const Header = () => {
                         </div>
                         <div className="menu-btns">
                             <Link target='_blank' to="https://wa.me/919092334732" className="theme-btn">
-                                Whatsapp Me
-                                <RiWhatsappLine size={15}/>
+                                Whatsapp Me <RiWhatsappLine size={15}/>
                             </Link>
                         </div>
                     </div>
