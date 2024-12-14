@@ -1,43 +1,40 @@
-import React from 'react'
-import { RiBookLine } from '@remixicon/react'
-import SlideUp from '../../utlits/animations/slideUp'
-import rsoft from "../../assets/images/company/rsoft-icon.png"
-import thaagan from "../../assets/images/company/thaagam-icon.png"
-
+import React from 'react';
+import { RiBookLine } from '@remixicon/react';
+import SlideUp from '../../utlits/animations/slideUp';
+import rsoft from "../../assets/images/company/rsoft-icon.png";
+import thaagan from "../../assets/images/company/thaagam-icon.png";
 
 const calculateExperienceDuration = (startDate, endDate = new Date()) => {
   const start = new Date(startDate);
   const end = endDate === 'Present' ? new Date() : new Date(endDate);
-  
+
   let years = end.getFullYear() - start.getFullYear();
   let months = end.getMonth() - start.getMonth();
-  
-  
+
   if (months < 0) {
     years--;
     months += 12;
   }
-  
-  
+
   const formatDuration = () => {
     if (endDate === 'Present') {
       return years > 0 
         ? `${years} year${years > 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`
         : `${months} month${months !== 1 ? 's' : ''}`;
     }
-    
+
     return years > 0 
       ? `${years} year${years > 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`
       : `${months} month${months !== 1 ? 's' : ''}`;
   };
-  
+
   return formatDuration();
 };
 
-const ExperienceCard = ({ year, title, institution, isExperience = false, companyIcon }) => {
+const ExperienceCard = ({ year, title, institution, isExperience = false, companyIcon, website }) => {
   const [startDate, endDate] = year.split(' - ');
   const duration = isExperience ? calculateExperienceDuration(startDate, endDate) : null;
-  
+
   return (
     <SlideUp>
       <div className="resume-item">
@@ -47,16 +44,23 @@ const ExperienceCard = ({ year, title, institution, isExperience = false, compan
               src={companyIcon} 
               alt={`${institution} logo`} 
               className="company-icon" 
-              style={{ width: '50px', height: '50px', objectFit: 'contain',}}
+              style={{ width: '50px', height: '50px', objectFit: 'contain' }}
             />
           ) : (
             <RiBookLine />
           )}
         </div>
         <div className="content">
-          
-          <h4>{institution}</h4>
-          <span className="company">{title} </span>
+          <h4>
+            {website ? (
+              <a href={website} target="_blank" rel="noopener noreferrer">
+                {institution}
+              </a>
+            ) : (
+              institution
+            )}
+          </h4>
+          <span className="company">{title}</span>
           <span className="years">
             {isExperience ? `${year} / ${duration}` : year}
           </span>
@@ -66,21 +70,21 @@ const ExperienceCard = ({ year, title, institution, isExperience = false, compan
   );
 };
 
-
 const Resume = () => {
   const experienceData = [
     {
       year: 'Dec 2024 - Present',
       title: 'Front-end Developer',
       institution: 'RSoft Technologies',
-      icon: rsoft
+      icon: rsoft,
+      website: 'https://www.rsoft.in/'
     },
     {
       year: 'Nov 2022 - Dec 2024',
       title: 'Front-end Developer',
       institution: 'Thaagam Foundation',
       icon: thaagan,
-      
+      website: 'https://thaagam.org/'
     }
   ];
 
@@ -110,6 +114,7 @@ const Resume = () => {
                       institution={exp.institution}
                       isExperience={true}
                       companyIcon={exp.icon}
+                      website={exp.website}
                     />
                   ))}
                 </div>
@@ -137,7 +142,7 @@ const Resume = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;
