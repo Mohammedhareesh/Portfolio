@@ -1,60 +1,142 @@
-import { RiBookLine } from '@remixicon/react'
 import React from 'react'
+import { RiBookLine } from '@remixicon/react'
 import SlideUp from '../../utlits/animations/slideUp'
+import rsoft from "../../assets/images/company/rsoft-icon.png"
+import thaagan from "../../assets/images/company/thaagam-icon.png"
+
+
+const calculateExperienceDuration = (startDate, endDate = new Date()) => {
+  const start = new Date(startDate);
+  const end = endDate === 'Present' ? new Date() : new Date(endDate);
+  
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+  
+  
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  
+  const formatDuration = () => {
+    if (endDate === 'Present') {
+      return years > 0 
+        ? `${years} year${years > 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`
+        : `${months} month${months !== 1 ? 's' : ''}`;
+    }
+    
+    return years > 0 
+      ? `${years} year${years > 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`
+      : `${months} month${months !== 1 ? 's' : ''}`;
+  };
+  
+  return formatDuration();
+};
+
+const ExperienceCard = ({ year, title, institution, isExperience = false, companyIcon }) => {
+  const [startDate, endDate] = year.split(' - ');
+  const duration = isExperience ? calculateExperienceDuration(startDate, endDate) : null;
+  
+  return (
+    <SlideUp>
+      <div className="resume-item">
+        <div className="icon">
+          {companyIcon ? (
+            <img 
+              src={companyIcon} 
+              alt={`${institution} logo`} 
+              className="company-icon" 
+              style={{ width: '50px', height: '50px', objectFit: 'contain',}}
+            />
+          ) : (
+            <RiBookLine />
+          )}
+        </div>
+        <div className="content">
+          
+          <h4>{title}</h4>
+          <span className="company">{institution}</span>
+          <span className="years">
+            {isExperience ? `${year} / ${duration}` : year}
+          </span>
+        </div>
+      </div>
+    </SlideUp>
+  );
+};
+
 
 const Resume = () => {
-    return (
-        <section id="resume" className="resume-area">
-            <div className="container">
-                <div className="resume-items">
-                    <div className="row">
-                        {/* <!-- START EXPERIENCE RESUME DESIGN AREA --> */}
-                        <div className="col-xl-6 col-md-6">
-                            <div className="single-resume">
-                                <h2>Experience</h2>
-                                <div className="experience-list">
-                                    <Card year={'Nov 2022 - Present'} title={'Front-end Developer'} institution={'Thaagam Foundation'} />
-                                    {/* <Card year={'2021 - 2023'} title={'Marketing Expert GRP'} institution={'Envato Theme Developer'} />
-                                    <Card year={'2021 - 2022'} title={'Web Designer'} institution={'Web Developer & Business Partner'} /> */}
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- // END EXPERIENCE RESUME DESIGN AREA -->
-                        <!-- START EDUCATION RESUME DESIGN AREA --> */}
-                        <div className="col-xl-6 col-md-6">
-                            <div className="experience-list">
-                                <div className="single-resume">
-                                    <h2>Education</h2>
-                                    <Card year={'2016 - 2019'} title={'Bachelor Degree of Computer Application'} institution={'University of Madras'} />
-                                    {/* <Card year={'2021 - 2024'} title={'Higher secoundery Education'} institution={'Premium College United VC'} />
-                                    <Card year={'2020 - 2021'} title={'UI/UX Design'} institution={'Webster College'} /> */}
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- // END EDUCATION RESUME DESIGN AREA --> */}
-                    </div>
+  const experienceData = [
+    {
+      year: 'Dec 2024 - Present',
+      title: 'Front-end Developer',
+      institution: 'RSoft Technologies',
+      icon: rsoft
+    },
+    {
+      year: 'Nov 2022 - Dec 2024',
+      title: 'Front-end Developer',
+      institution: 'Thaagam Foundation',
+      icon: thaagan
+    }
+  ];
+
+  const educationData = [
+    {
+      year: '2016 - 2019',
+      title: 'Bachelor Degree of Computer Application',
+      institution: 'University of Madras'
+    }
+  ];
+
+  return (
+    <section id="resume" className="resume-area">
+      <div className="container">
+        <div className="resume-items">
+          <div className="row">
+            {/* Experience Section */}
+            <div className="col-xl-6 col-md-6">
+              <div className="single-resume">
+                <h2>Experience</h2>
+                <div className="experience-list">
+                  {experienceData.map((exp, index) => (
+                    <ExperienceCard 
+                      key={index}
+                      year={exp.year}
+                      title={exp.title}
+                      institution={exp.institution}
+                      isExperience={true}
+                      companyIcon={exp.icon}
+                    />
+                  ))}
                 </div>
+              </div>
             </div>
-        </section>
-    )
+            
+            {/* Education Section */}
+            <div className="col-xl-6 col-md-6">
+              <div className="experience-list">
+                <div className="single-resume">
+                  <h2>Education</h2>
+                  {educationData.map((edu, index) => (
+                    <ExperienceCard 
+                      key={index}
+                      year={edu.year}
+                      title={edu.title}
+                      institution={edu.institution}
+                      isExperience={false}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Resume
-
-
-const Card = ({ year, title, institution }) => {
-    return (
-        <SlideUp>
-            <div className="resume-item">
-                <div className="icon">
-                    <RiBookLine />
-                </div>
-                <div className="content">
-                    <span className="years">{year}</span>
-                    <h4>{title}</h4>
-                    <span className="company"> {institution} </span>
-                </div>
-            </div>
-        </SlideUp>
-    )
-}

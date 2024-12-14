@@ -11,18 +11,18 @@ const App = () => {
         const handleContextMenu = (e) => {
             e.preventDefault();
             setShowWarning(true);
-            setTimeout(() => setShowWarning(false), 2000); // Display message for 2 seconds
+            setTimeout(() => setShowWarning(false), 2000); 
         };
 
         const handleKeyDown = (e) => {
             if (
-                e.keyCode === 123 || // F12
-                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I/J/C
-                (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+                e.keyCode === 123 || 
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
+                (e.ctrlKey && e.keyCode === 85) 
             ) {
                 e.preventDefault();
                 setShowWarning(true);
-                setTimeout(() => setShowWarning(false), 2000); // Display message for 2 seconds
+                setTimeout(() => setShowWarning(false), 2000); 
             }
         };
 

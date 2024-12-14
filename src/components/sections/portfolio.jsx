@@ -21,14 +21,14 @@ const Portfolio = ({ className }) => {
         setAnimationClass(randomAnimation);
     }
 
-    // ------ filter unique category
+    
     const filteredCategory = ["All"]
     projectsData.forEach(({ category }) => {
         if (!filteredCategory.includes(category)) {
             filteredCategory.push(category)
         }
     })
-    // ------ filter unique category
+    
 
     const filteredProjects = category === 'All' ? projectsData : projectsData.filter(image => image.category === category);
 

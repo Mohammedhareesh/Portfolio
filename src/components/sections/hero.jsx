@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Marquee from "react-fast-marquee";
 import {
     RiFacebookCircleFill,
-    RiTwitterXLine,
     RiLinkedinFill,
     RiGithubLine,
     RiCircleFill,
@@ -11,7 +10,7 @@ import {
     RiWhatsappLine
 } from '@remixicon/react';
 import profile from "../../assets/images/about/profile.png";
-import cv from '../../assets/cv/Mohammed_Hareesh.pdf';
+// import cv from '../../assets/cv/Mohammed_Hareesh.pdf';
 import illustrator from "../../assets/images/skills/adobe-illustrator.png";
 import bs5 from "../../assets/images/skills/bootstrap-framework.png";
 import css from "../../assets/images/skills/css3.png";
@@ -31,7 +30,7 @@ import SlideUp from '../../utlits/animations/slideUp';
 const Hero = () => {
     const [experience, setExperience] = useState('');
     const [greeting, setGreeting] = useState('');
-    const [age, setAge] = useState(0);  // New state for age
+    const [age, setAge] = useState(0);  
 
     useEffect(() => {
         const calculateExperience = () => {
@@ -70,12 +69,12 @@ const Hero = () => {
         };
 
         const calculateAge = () => {
-            const birthDate = new Date('1998-12-16'); // Your birthdate
+            const birthDate = new Date('1998-12-16'); 
             const currentDate = new Date();
             let age = currentDate.getFullYear() - birthDate.getFullYear();
             const monthDifference = currentDate.getMonth() - birthDate.getMonth();
 
-            // Check if the birthday has already occurred this year
+            
             if (monthDifference < 0 || (monthDifference === 0 && currentDate.getDate() < birthDate.getDate())) {
                 age--;
             }
@@ -124,11 +123,11 @@ const Hero = () => {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className='cv-dwn-btn mt-20'>
+                                {/* <div className='cv-dwn-btn mt-20'>
                                     <a href={cv} download="Mohammed_Hareesh_CV.pdf" className="theme-btn ">
                                         Download CV <RiDownloadLine size={15}/>
                                     </a>
-                                </div>
+                                </div> */}
                             </div>
                         </SlideUp>
                     </div>
