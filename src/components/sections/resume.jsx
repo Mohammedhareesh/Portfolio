@@ -55,8 +55,8 @@ const ExperienceCard = ({ year, title, institution, isExperience = false, compan
         </div>
         <div className="content">
           
-          <h4>{title}</h4>
-          <span className="company">{institution}</span>
+          <h4>{institution}</h4>
+          <span className="company">{title} </span>
           <span className="years">
             {isExperience ? `${year} / ${duration}` : year}
           </span>
@@ -79,7 +79,8 @@ const Resume = () => {
       year: 'Nov 2022 - Dec 2024',
       title: 'Front-end Developer',
       institution: 'Thaagam Foundation',
-      icon: thaagan
+      icon: thaagan,
+      
     }
   ];
 
