@@ -71,34 +71,35 @@ export const projectsData = [{
         category: "Offical",
         title: "Karunai Karangal",
         urls: "https://karunaikarangalindia.org/"
-    }, // {
+    },
+     // {
     //     id:2,
     //     src:work_2,
     //     category:"Freelance",
     //     title:"Microbot Technology",
     //     urls:"https://microbotware.com/"
     // },
-    {
-        id: 8,
-        src: loco_mini,
-        category: "Freelance",
-        title: "Loco Ministries",
-        urls: "https://locoafrica.org/"
-    },
-    {
-        id: 9,
-        src: bocea,
-        category: "Freelance",
-        title: "BOCEA",
-        urls: "https:/boceastafrica.org/"
-    },
-    {
-        id: 10,
-        src: cleaning,
-        category: "Freelance",
-        title: "Cleaning Service",
-        urls: "https://cleaningserviceqwt.com/"
-    },
+    // {
+    //     id: 8,
+    //     src: loco_mini,
+    //     category: "Freelance",
+    //     title: "Loco Ministries",
+    //     urls: "https://locoafrica.org/"
+    // },
+    // {
+    //     id: 9,
+    //     src: bocea,
+    //     category: "Freelance",
+    //     title: "BOCEA",
+    //     urls: "https:/boceastafrica.org/"
+    // },
+    // {
+    //     id: 10,
+    //     src: cleaning,
+    //     category: "Freelance",
+    //     title: "Cleaning Service",
+    //     urls: "https://cleaningserviceqwt.com/"
+    // },
     {
         id: 11,
         src: dsc,

@@ -2,7 +2,8 @@ import React from 'react';
 import { RiBookLine } from '@remixicon/react';
 import SlideUp from '../../utlits/animations/slideUp';
 import rsoft from "../../assets/images/company/rsoft-icon.png";
-import thaagan from "../../assets/images/company/thaagam-icon.png";
+import thathwamasi from "../../assets/images/company/thathwamasi-icon.png";
+import thaagam from "../../assets/images/company/thaagam-icon.png";
 
 const calculateExperienceDuration = (startDate, endDate = new Date()) => {
   const start = new Date(startDate);
@@ -70,20 +71,20 @@ const ExperienceCard = ({ year, title, institution, isExperience = false, compan
   );
 };
 
-const Resume = () => {
+const Resume = ({ hideEducation = false }) => {
   const experienceData = [
     {
-      year: 'Dec 2024 - Present',
-      title: 'Front-end Developer',
-      institution: 'RSoft Technologies',
-      icon: rsoft,
-      website: 'https://www.rsoft.in/'
+      year: 'Jan 2025 - Present',
+      title: 'Senior Developer',
+      institution: 'Thathwamasi Infotech Private Limited',
+      icon: thathwamasi,
+      website: '#'
     },
     {
       year: 'Nov 2022 - Dec 2024',
       title: 'Front-end Developer',
       institution: 'Thaagam Foundation',
-      icon: thaagan,
+      icon: thaagam,
       website: 'https://thaagam.org/'
     }
   ];
@@ -101,8 +102,9 @@ const Resume = () => {
       <div className="container">
         <div className="resume-items">
           <div className="row">
-            {/* Experience Section */}
-            <div className="col-xl-6 col-md-6">
+            
+            {/* ✅ Always Experience in col-xl-6 */}
+            <div className={hideEducation ? "col-xl-12 col-md-12" : "col-xl-6 col-md-6"}>
               <div className="single-resume">
                 <h2>Experience</h2>
                 <div className="experience-list">
@@ -120,29 +122,34 @@ const Resume = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Education Section */}
-            <div className="col-xl-6 col-md-6">
-              <div className="experience-list">
-                <div className="single-resume">
-                  <h2>Education</h2>
-                  {educationData.map((edu, index) => (
-                    <ExperienceCard 
-                      key={index}
-                      year={edu.year}
-                      title={edu.title}
-                      institution={edu.institution}
-                      isExperience={false}
-                    />
-                  ))}
+
+            {/* ✅ Conditionally render Education (also col-xl-6) */}
+            {!hideEducation && (
+              <div className="col-xl-6 col-md-6">
+                <div className="experience-list">
+                  <div className="single-resume">
+                    <h2>Education</h2>
+                    {educationData.map((edu, index) => (
+                      <ExperienceCard 
+                        key={index}
+                        year={edu.year}
+                        title={edu.title}
+                        institution={edu.institution}
+                        isExperience={false}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
+
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+
 
 export default Resume;
